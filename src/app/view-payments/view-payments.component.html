@@ -1,0 +1,40 @@
+<div class="content">
+    <div class="row">
+        <div class="col-sm-12 col-12">
+            <h4 class="page-title">Payments</h4>
+        </div>
+        <div class="col-sm-12 col-12 text-right m-b-30">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped custom-table mb-0 datatable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Order No</th>
+                                <th>Name on Card</th>
+                                <th>Credit Card No</th>
+                                <th>Expiry Month & Year</th>
+                                <th>Cvv</th>
+                                <th>Delete Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let payment of placedOrders">
+                                <td>{{payment.id}}</td>
+                                <td>{{payment.orderNo | number}}</td>
+                                <td>{{payment.NameOnCard | uppercase}}</td>
+                                <td>{{payment.creditCardNumber}}</td>
+                                <td>{{payment.ExpMonthAndYear }}</td>
+                                <td>{{payment.CVV | number}}</td>
+                                <td class="text-right">
+                                    <button class="btn btn-rounded btn btn-danger" data-toggle="modal"
+                                        data-target="#make_payment"> Delete</button>
+
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>

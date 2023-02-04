@@ -1,0 +1,78 @@
+<section class="gradient-custom">
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-9 col-lg-7 col-xl-5">
+        <div class="card">
+          <form [formGroup]="addCardInfo" class="responsive" (ngSubmit)="addOrderCard()">
+            <div class="card-body">
+              <div class="card-title d-flex justify-content-between mb-0">
+                <p class="text-muted mb-0">Amount </p>
+                <p class="mb-0">-----</p>
+              </div>
+            </div>
+            <div class="rounded-bottom" style="background-color: #eee;">
+              <div class="card-body">
+                <p class="mb-4">Your payment details</p>
+                <div class="form-outline mb-3">
+                  <span class="text-danger"
+                  *ngIf="addCardInfo.get('orderNo')?.invalid && addCardInfo.get('orderNo')?.touched">
+                  Enter Order No
+                </span>
+                  <input type="text" id="orderNo" class="form-control" placeholder="Order Number"
+                    formControlName="orderNo" />
+                  <label class="form-label" for="orderNo">Order No</label>
+                </div>
+                <div class="form-outline mb-3">
+                  <span class="text-danger"
+                  *ngIf="addCardInfo.get('creditCardNumber')?.invalid && addCardInfo.get('creditCardNumber')?.touched">
+                  Card Number Required
+                </span>
+                  <input type="text" id="creditCardNumber" class="form-control" placeholder="1234 5678 1234 5678"
+                    formControlName="creditCardNumber" />
+                  <label class="form-label" for="creditCardNumber">Card Number</label>
+                </div>
+                <div class="form-outline mb-3">
+                  <span class="text-danger"
+                    *ngIf="addCardInfo.get('NameOnCard')?.invalid && addCardInfo.get('NameOnCard')?.touched">
+                    Cardholder's Name Required
+                  </span>
+                  <input type="text" id="NameOnCard" class="form-control " siez="17" placeholder="Cardholder's Name"
+                    formControlName="NameOnCard" />
+                  <label class="form-label" for="NameOnCard">Cardholder's Name</label>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-6">
+                    <div class="form-outline">
+                      <span class="text-danger"
+                      *ngIf="addCardInfo.get('ExpMonthAndYear')?.invalid && addCardInfo.get('ExpMonthAndYear')?.touched">
+                      Enter Expire Date
+                    </span>
+                      <input type="text" id="ExpMonthAndYear" class="form-control" placeholder="MM/YYYY"
+                        formControlName="ExpMonthAndYear" />
+                      <label class="form-label" for="ExpMonthAndYear">Expire</label>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-outline">
+                      <span class="text-danger"
+                      *ngIf="addCardInfo.get('CVV')?.invalid && addCardInfo.get('CVV')?.touched">
+                      Enter CVV
+                    </span>
+                      <input type="password" id="CVV" class="form-control" placeholder="CVV" formControlName="CVV" />
+                      <label class="form-label" for="CVV">Cvv</label>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-info btn-block" [disabled]="addCardInfo.invalid">PLACE
+                  ORDER</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+

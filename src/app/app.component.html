@@ -1,0 +1,33 @@
+<div class="content"  ><span></span></div>
+<title>{{title}}</title>
+
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-3 col-3">
+        <div class="logo">
+          <img src="assets/logo.jpg" width="40px" height="40px" alt="">
+        </div>
+
+      </div>
+      <div class="col-md-9 col-sm-9 col-9 text-end">
+        <div class="menu_icon" [class.menu_icon_Class]="menu_icon_variable" (click)="openMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </div>
+        <div class="menu" [class.menuClass]="menuVariable">
+          <ul>
+            <li><a routerLink="/vieworderinfo" routerLinkActive="active"> Orders</a></li>
+            <li><a routerLink="/viewpayments" routerLinkActive="active">Payments</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>

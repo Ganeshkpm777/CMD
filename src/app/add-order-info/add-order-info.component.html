@@ -1,0 +1,44 @@
+<div class="container ">
+  <div class="col-sm-12 col-12">
+    <h3>Order Form</h3>
+</div>
+  <div class="row">
+    <div class="col col-md-6" style="max-height: 100vh">
+      <form [formGroup]="addOrderInfo" (ngSubmit)="postDetails()" >
+        <div class="mb-3">
+          <label for="orderNo" class="form-label">Order No</label>
+          <input type="number" class="form-control" id="orderNo" formControlName="orderNo" />
+        </div>
+        <div class="mb-3"> 
+          <label for="contactName" class="form-label">Contact Name</label>
+          <input  type="text" class="form-control" id="contactName" formControlName="contactName" />
+        </div>
+        <div class="mb-3">
+          <label for="orderDate" class="form-label">Order Date</label>
+          <input type="date" class="form-control" id="orderDate" formControlName="orderDate" />
+        </div>
+        <div class="mb-3">
+          <label for="itemsOrdered" class="form-label">Items Ordered</label>
+          <input type="number" class="form-control" id="itemsOrdered" formControlName="itemsOrdered" />
+        </div>
+        <div class="mb-3">
+          <label for="orderTotal" class="form-label">Order Total</label>
+          <input type="number" class="form-control" id="orderTotal" formControlName="orderTotal" />
+        </div>
+        <div class="mb-3">
+          <label for="taxTotal" class="form-label">Tax Total</label>
+          <input type="number" class="form-control" id="taxTotal" formControlName="taxTotal" />
+        </div>
+        <div class="mb-3">
+          <label for="grandTotal" class="form-label">Grand Total</label>
+          <input type="text" class="form-control" id="grandTotal" formControlName="grandTotal" />
+        </div>
+        
+        <button type="submit" class="btn btn-primary" [disabled]="addOrderInfo.invalid" >Submit</button>
+      </form>
+    </div>
+    <div class="col col-md-4">
+     <div style="position: fixed">{{ preview }}</div> 
+    </div>
+  </div>
+</div>
